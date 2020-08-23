@@ -9,7 +9,26 @@ class Chat extends StatelessWidget {
           appBar: AppBar(
             title: Text("チャット"),
           ),
-          body: new TestList()),
+
+          /*******これはデバッグめんどくさくなるので後程追加***********
+          body: ListView(
+              children: [
+                  FlatButton(
+                    child: Text('チャット画面に進む'),
+                    onPressed: () async{
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TestList(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+          ),
+              **************************************************/
+        body: new TestList(),
+      ),
     );
   }
 }

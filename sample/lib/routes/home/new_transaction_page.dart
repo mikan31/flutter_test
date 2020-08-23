@@ -17,10 +17,21 @@ class NewTransaction extends StatelessWidget{
             padding: const EdgeInsets.all(8.0),
             child: Column(
                 children:<Widget>[
-                  TextField(
-                    onChanged: (text){
-                      JobName = text;
-                    },
+                  Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: Row(
+                      children:<Widget> [
+                        Text('ジョブ名:  '),
+                        new Container(
+                          width: 300,
+                          child: TextField(
+                            onChanged: (text){
+                              JobName = text;
+                              },
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   RaisedButton(
                     child: Text('ジョブを公開'),
@@ -47,7 +58,7 @@ class NewTransaction extends StatelessWidget{
 
                         //公開完了したらホームに戻る
                         await Navigator.of(context).pop();
-                      } catch(e){
+                      } catch(e){ //フォーム未入力時の処理
                         await showDialog(
                           context: context,
                           builder: (BuildContext context) {
@@ -80,6 +91,7 @@ class NewTransaction extends StatelessWidget{
     }
     FirebaseFirestore.instance.collection('Job').add({
       'title': 'Job',
+      'createdAt': Timestamp.now(),
     },
     );
   }
