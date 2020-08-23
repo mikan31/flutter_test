@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sample/routes/new_transaction_page.dart';
+
+import 'new_transaction_page.dart';
 
 
 class Home extends StatelessWidget {
@@ -49,6 +50,7 @@ class Home extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) => NewTransaction(),
+                  fullscreenDialog: true,
                 ),
               );
             },

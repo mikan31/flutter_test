@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sample/routes/home/home.dart';
 
-import 'routes/home.dart';
 import 'routes/chat.dart';
 import 'routes/account.dart';
 
