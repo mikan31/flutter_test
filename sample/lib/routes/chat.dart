@@ -9,6 +9,7 @@ class Chat extends StatelessWidget {
           appBar: AppBar(
             title: Text("チャット"),
           ),
+          body: new TestList());
 
           /*******これはデバッグめんどくさくなるので後程追加***********
           body: ListView(
@@ -27,9 +28,6 @@ class Chat extends StatelessWidget {
                 ],
           ),
               **************************************************/
-        body: new TestList(),
-      ),
-    );
   }
 }
 
@@ -59,5 +57,32 @@ class TestList extends StatelessWidget {
         );
       },
     );
+  }
+}
+
+class Message extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return IconTheme(
+        data: IconThemeData(color: Theme.of(context).accentColor),
+        // コンテナ型(自身の中にウィジェットを組み込める)Containerウィジェット
+        child: Container(
+            alignment: Alignment(0.0, 0.0),
+            margin: EdgeInsets.symmetric(horizontal: 8.0),
+            // Rowウィジェットは複数のウィジェットを縦に配置するコンテナ型ウィジェット
+            child: Row(
+              children: <Widget>[
+                Flexible(
+                  child: TextField(
+                    decoration:
+                        InputDecoration.collapsed(hintText: "Send a message"),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.symmetric(horizontal: 4.0),
+                  child: Icon(Icons.send),
+                )
+              ],
+            )));
   }
 }
