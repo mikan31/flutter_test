@@ -17,12 +17,15 @@ class NewTransaction extends StatelessWidget{
             padding: const EdgeInsets.all(8.0),
             child: Column(
                 children:<Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: Row(
-                      children:<Widget> [
-                        Text('ジョブ名:  '),
-                        new Container(
+                  Row(
+                    children:<Widget> [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('ジョブ名:'),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: new Container(
                           width: 300,
                           child: TextField(
                             onChanged: (text){
@@ -30,8 +33,8 @@ class NewTransaction extends StatelessWidget{
                               },
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   RaisedButton(
                     child: Text('ジョブを公開'),
