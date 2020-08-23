@@ -4,11 +4,30 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class Chat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("チャット"),
-        ),
-        body: new TestList());
+    return new MaterialApp(
+      home: new Scaffold(
+          appBar: AppBar(
+            title: Text("チャット"),
+          ),
+          body: new TestList());
+
+          /*******これはデバッグめんどくさくなるので後程追加***********
+          body: ListView(
+              children: [
+                  FlatButton(
+                    child: Text('チャット画面に進む'),
+                    onPressed: () async{
+                      await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TestList(),
+                        ),
+                      );
+                    },
+                  ),
+                ],
+          ),
+              **************************************************/
   }
 }
 
